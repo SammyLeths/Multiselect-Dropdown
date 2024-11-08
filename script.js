@@ -115,7 +115,7 @@ let selectedEvents = new Set();
 
 function toggleDropdown() {
   const menu = document.getElementById("dropdownMenu");
-  menu.style.display = menu.style.display === "none" ? "block" : "none";
+  menu.style.display = menu.style.display === "none" ? "flex" : "none";
   document.querySelector(".dropdown-header").classList.toggle("active");
 }
 
