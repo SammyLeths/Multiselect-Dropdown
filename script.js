@@ -128,6 +128,10 @@ function updateSelectedCount() {
     selectedEvents.size === events.length;
 }
 
+function openDropdown() {
+  document.getElementById("dropdownMenu").style.display = "flex";
+}
+
 function filterEvents() {
   const filter = document.getElementById("searchInput").value.toLowerCase();
   renderEvents(filter);
