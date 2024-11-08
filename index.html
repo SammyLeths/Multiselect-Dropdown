@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <title>Multiple Event Selection Dropdown</title>
+
+</head>
+
+<body>
+
+  <div class="container">
+    <form class="dropdown-container" id="event-form">
+      <div class="dropdown-header">
+        <input type="text" class="" id="searchInput" placeholder="Search Events..." onfocus="toggleDropdown()"
+          onkeyup="filterEvents()">
+        <div class="wrapper">
+          <div class="selected-count">
+            <span id="selectedCount"></span>
+            <i class="fa-solid fa-xmark" onclick="clearSelections(event)"></i>
+          </div>
+          <div class="arrow-icon" onclick="toggleDropdown()">
+            <i class="fa-solid fa-angle-down fa-lg"></i>
+          </div>
+        </div>
+      </div>
+      <div class="dropdown-menu-wrapper" id="dropdownMenu" style="display: none;">
+        <div class="dropdown-menu">
+          <label for="selectAll" class="select-all">
+            <input type="checkbox" id="selectAll" onclick="selectAllEvents(this)">
+            Select All
+          </label>
+          <div id="noResultsMessage" class="no-results">No event match your search keyword...
+          </div>
+          <div class="divider" id="selected"></div>
+          <div class="event-list" id="eventList">
+          </div>
+
+        </div>
+      </div>
+
+      <button type="button" class="submit-btn" onclick="submitForm()">Filter by Events</button>
+    </form>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+
+</html>
